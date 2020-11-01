@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Happy-Path">
+        <parameter name="appType" value="Chrome"/>
+        <parameter name="username" value="cba@yahoo.com"/>
+        <parameter name="password" value="BJSSTest"/>
+        <parameter name="size" value="M"/>
+        <packages>
+            <package name="PageTests"/>
+        </packages>
+        <classes>
+            <class name="PageTests.HomePageTest">
+                <methods>
+                    <include name="purchase2Items"/>
+                    <include name="reviewPreviousItemAndAddMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="unhappy-Path">
+        <parameter name="appType" value="Chrome"/>
+        <parameter name="username" value="cba@yahoo.com"/>
+        <parameter name="password" value="BJSSTest"/>
+        <packages>
+            <package name="PageTests"/>
+        </packages>
+        <classes>
+            <class name="PageTests.HomePageTest">
+                <methods>
+                    <include name="reviewPreviousImageAndGetFailAssert"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="apiTests">
+        <packages>
+            <package name="ApiTests"/>
+        </packages>
+        <classes>
+            <class name="ApiTests.CRUDTest">
+            </class>
+        </classes>
+    </test>
+</suite>
+
